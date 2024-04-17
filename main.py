@@ -8,7 +8,7 @@ colors = (
     '#ec0075', # rosa [2]
     '#ff6903', #laranja [3]
     '#ffd366', # amarelo [4]
-    
+
 )
 
 
@@ -25,7 +25,7 @@ app = CTk()
 # app.grid(padx=20, pady=10)
 app.geometry('300x300')
 app.resizable(0, 0)
-app.title('Insta Scrapper')
+app.title('Insta Scraper')
 set_appearance_mode('light')
 
 label_title = CTkLabel(master=app, text='Instagram profile scraper')
