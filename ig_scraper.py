@@ -46,7 +46,7 @@ class IGBot:
             for x in localRefs:
                 if x.get_attribute('src') not in refs:
                     refs.append(x.get_attribute('src'))
-        print(len(refs), ' imagens a serem baixadas.')
+        print(len(refs), ' images to be downloaded.')
 
         for idx,picRef in enumerate(refs):
             filename = url.replace('.','')+ ' ' + str(idx)
@@ -54,7 +54,7 @@ class IGBot:
             try:
                 img = requests.get(picRef)
                 if img.status_code != 200:
-                    print(f'IMAGEM NAO PODE SER SALVA, URL: {picRef}')
+                    print(f'IMAGE COUDNT BE DOWNLOADED, URL: {picRef}')
                 else:
                     Path(f'{os.path.expanduser('~')}\\Desktop\\{url}\\').mkdir(parents=True, exist_ok=True)
                     with open(f'{os.path.expanduser('~')}\\Desktop\\{url}\\{filename}.jpg', 'wb') as f:
@@ -63,7 +63,7 @@ class IGBot:
             except:
                 try:
                     if picRef == None:
-                        print('IMAGEM INEXISTENTE')
+                        print('INEXISTENT IMAGE')
                 except:
-                    print(f'(EXEPT) IMAGEM NAO PODE SER SALVA, URL: ')#{picRef}
+                    print(f'(EXEPT) IMAGE COUDNT BE DOWNLOADED, URL: {picRef}')
                     print(f'{os.path.expanduser('~')}\\Desktop\\{url}\\{filename}.jpg')
